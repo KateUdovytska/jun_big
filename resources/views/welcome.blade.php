@@ -17,6 +17,11 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+                background-color: #000000;
+                color: #ffffff;
+            }
+            a{
+                color: #ffffff;
             }
 
             .container {
@@ -38,7 +43,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Jun Mega</div>
+                <a href="{{route('tasks.index')}}">To tasks list</a>
             </div>
         </div>
     </body>
