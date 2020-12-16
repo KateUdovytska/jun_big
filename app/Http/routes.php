@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'tasks'], function (){
+    Route::get('/', 'Tasks\TasksController@index')
+    ->name('tasks.index');
+
+    Route::get('/create', 'Tasks\TasksController@create')
+        ->name('tasks.create');
+});
