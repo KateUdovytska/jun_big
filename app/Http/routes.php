@@ -24,6 +24,8 @@ Route::group(['prefix'=>'tasks'], function (){
 
     Route::post('/', 'Tasks\TasksController@add')
         ->name('tasks.add');
+
+    Route::delete('/{task}', 'Tasks\TasksController@delete')->name('tasks.delete');
 });
 
 Route::auth();
