@@ -13,4 +13,34 @@
             </div>
         </div>
     </form>
+    <!-- Текущие задачи -->
+    @if (count($tasks) > 0)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Задачи
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped task-table">
+                    <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Действие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($tasks as $task)
+                        <tr>
+                            <td class="table-text">
+                                <div>{{ $task->name }}</div>
+                            </td>
+                            <td>
+                                <!-- TODO: Кнопка Удалить -->
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    @endif
 @endsection

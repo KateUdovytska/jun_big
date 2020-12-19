@@ -15,8 +15,14 @@ class TasksController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
-        return view('tasks.index');
+    public function index(Request $request){
+        $user = $request->user();
+        $tasks = $user->tasks;
+        return view('tasks.index',
+            [
+                'tasks' => $tasks,
+            ]
+        );
     }
 
     public function create(){
