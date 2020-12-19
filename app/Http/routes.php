@@ -21,6 +21,9 @@ Route::group(['prefix'=>'tasks'], function (){
 
     Route::get('/create', 'Tasks\TasksController@create')
         ->name('tasks.create');
+
+    Route::post('/', 'Tasks\TasksController@add')
+        ->name('tasks.add');
 });
 
 Route::auth();
