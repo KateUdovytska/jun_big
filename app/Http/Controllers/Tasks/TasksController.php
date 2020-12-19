@@ -15,7 +15,8 @@ class TasksController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $user = $request->user();
         $tasks = $user->tasks;
         return view('tasks.index',
@@ -25,21 +26,23 @@ class TasksController extends Controller
         );
     }
 
-    public function create(){
+    public function create()
+    {
         return view('tasks.create');
     }
 
-    public function add(Request $request){
+    public function add(Request $request)
+    {
         $this->validate(
             $request,
-            ['name'=>'required|max:255']
+            ['name' => 'required|max:255']
         );
 //        $user = Auth::user(); 1var
         $user = $request->user();  //2var
         //=================1var
         $user->tasks()->create(
             [
-                'name'=>$request->name,
+                'name' => $request->name,
             ]
         );
         //=================2var
