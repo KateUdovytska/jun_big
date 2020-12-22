@@ -48,8 +48,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/home') }}">Home</a></li>
+                <li><a href="<?= route('setlocale', ['lang' => 'en']) ?>">English</a></li>
+                <li><a href="<?= route('setlocale', ['lang' => 'ru']) ?>">Русский</a></li>
+                <li><a href="<?= route('setlocale', ['lang' => 'uk']) ?>">Українська</a></li>
             </ul>
-
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
