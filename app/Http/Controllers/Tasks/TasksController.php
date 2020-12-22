@@ -19,6 +19,7 @@ class TasksController extends Controller
     {
         $user = $request->user();
         $tasks = $user->tasks;
+        //$tasks=Task::all();
         return view('tasks.index',
             [
                 'tasks' => $tasks,
@@ -55,6 +56,7 @@ class TasksController extends Controller
 
     public function delete(Task $task)
     {
+        $this->authorize('destroy', $task);
         $task->delete();
         return redirect(route('tasks.index'));
     }
