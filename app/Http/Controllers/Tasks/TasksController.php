@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App;
 
 class TasksController extends Controller
 {
@@ -59,5 +60,11 @@ class TasksController extends Controller
         $this->authorize('destroy', $task);
         $task->delete();
         return redirect(route('tasks.index'));
+    }
+
+    public function changeLocale($locale){
+        session(['locale'=>$locale]);
+        App::setLocale($locale);
+        return redirect()->back();
     }
 }

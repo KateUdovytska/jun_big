@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('locale/{locale}', 'Tasks\TasksController@changeLocale')->name('locale');
+
+
+
 Route::group(['prefix'=>'tasks'], function (){
+
+
     Route::get('/', 'Tasks\TasksController@index')
     ->name('tasks.index');
 
@@ -31,3 +37,4 @@ Route::group(['prefix'=>'tasks'], function (){
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+//Route::get('locale/{locale}', 'Tasks\TasksController@changeLocale')->name('locale');
